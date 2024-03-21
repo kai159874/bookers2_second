@@ -14,8 +14,9 @@
       <td><%= user.introduction %></td>
     </tr>
   </table>
-
-  <%= link_to edit_user_path(user.id), class: "btn btn-outline-secondary w-100" do %>
-  <i class="fa-solid fa-user-gear"></i>
+  <% unless user.guest_user? %>
+    <%= link_to edit_user_path(user.id), class: "btn btn-outline-secondary w-100" do %>
+      <i class="fa-solid fa-user-gear"></i>
+    <% end %>
   <% end %>
 </div>

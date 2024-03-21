@@ -6,6 +6,7 @@
       <p>you can share and exchange your opinions , inpressions , and emotions<br>
       about various books!</p>
       <div class="container mx-auto">
+        <%= link_to "guest rog in", users_guest_sign_in_path, class: "btn btn-block  btn-sm btn-secondary mt-4", method: :post %>
         <%= link_to "Log in", new_user_session_path, class: "btn btn-block  btn-sm btn-info mt-4" %>
         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-block btn-sm btn-success mt-3" %>
       </div>

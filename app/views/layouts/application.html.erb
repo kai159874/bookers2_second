@@ -13,6 +13,11 @@
   <body>
     <%= render "layouts/header" %>
 
+  <div class="Notification">
+   <% flash.each do |key, value| %>
+   <%= content_tag :div, value, class: key %>
+   <% end %>
+  </div>
   <div class="containar p-4">
     <%= yield %>
   </div>
