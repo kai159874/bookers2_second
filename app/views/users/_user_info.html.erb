@@ -14,15 +14,21 @@
     </tr>
     <tr>
       <th>follows</th>
-      <td><%= link_to user.followings.count, user_followings_path(user) %></td>
+      <td id="follow_counts">
+        <%= link_to user.followings.count, user_followings_path(user) %>
+      </td>
     </tr>
     <tr>
       <th>followers</th>
-      <td><%= link_to user.followers.count, user_followers_path(user) %></td>
+      <td id="follower_counts">
+        <%= link_to user.followers.count, user_followers_path(user) %>
+      </td>
     </tr>
   </table>
   <% if current_user != user %>
-    <%= render "relationships/follow_btn", user: user %>
+    <div id="btn_<%= user.id %>">
+      <%= render "relationships/follow_btn", user: user %>
+    </div>
   <% else %>
     <%= link_to edit_user_path(user.id), class: "btn btn-outline-secondary w-100" do %>
       <i class="fa-solid fa-user-gear"></i>
