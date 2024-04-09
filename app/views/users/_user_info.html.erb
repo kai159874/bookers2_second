@@ -34,4 +34,9 @@
       <i class="fa-solid fa-user-gear"></i>
     <% end %>
   <% end %>
+
+  <% if current_user != user && current_user.following?(user) && user.following?(current_user) %>
+    <%= link_to "DM", chat_path(user.id), class: "ml-3" %>
+  <% end %>
+
 </div>
